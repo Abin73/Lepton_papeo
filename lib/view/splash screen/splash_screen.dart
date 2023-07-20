@@ -2,8 +2,8 @@ import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/colors/colors.dart';
-import 'package:lepton_papeo/fonts/googleMonstre.dart';
+import 'package:lepton_papeo/view/colors/colors.dart';
+import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
 
 import '../homepage/home_Page.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lepton_papeo/colors/colors.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lepton_papeo/view/colors/colors.dart';
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({
@@ -9,24 +10,24 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 13),
-     width: 260,
-     height: 45,
+      margin: EdgeInsets.only(top: 10.h),
+     width: 250.w,
+     height: 45.h,
        decoration: BoxDecoration(
         // color: Colors.grey.shade200,
          borderRadius: BorderRadius.circular(10.0),
-         border: Border.all(color: cblack,width: 2),
+         border: Border.all(color: primary,width: 1),
 
        ),
-       child: const TextField(
+       child:  TextField(
          //controller: ,
          decoration:  InputDecoration(
           fillColor: cblack,
-           hintText: 'Search restaurants',hintStyle: TextStyle(color: cblack,
-           
+           hintText: 'Search food',hintStyle: TextStyle(color: cblack,
+           fontSize: 15.w
            ),
            border: InputBorder.none,
-           prefixIcon: Icon(Icons.search,color: cblack),
+           prefixIcon: Icon(Icons.search,color: cblack,size: 25.w,),
           // contentPadding: EdgeInsets.all(16.0),
          ),
        ),

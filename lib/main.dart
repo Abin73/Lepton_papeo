@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/homepage/home_Page.dart';
+import 'package:lepton_papeo/view/homepage/home_Page.dart';
 
 void main() {
   runApp(const MyApp());

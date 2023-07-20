@@ -3,13 +3,14 @@ import 'package:botton_nav_bar/botton_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/carosel_slider.dart/carosel_slider.dart';
-import 'package:lepton_papeo/colors/colors.dart';
+import 'package:lepton_papeo/view/constant/constant.dart';
+import 'package:lepton_papeo/view/homepage/widgets/carosel_slider.dart/carosel_slider.dart';
+import 'package:lepton_papeo/view/colors/colors.dart';
 import 'package:lepton_papeo/demo.dart';
-import 'package:lepton_papeo/fonts/googleMonstre.dart';
-import 'package:lepton_papeo/widget/iconbg_widget.dart';
-import 'package:lepton_papeo/widget/search_bar.dart';
-import 'package:lepton_papeo/widget/text_widget.dart';
+import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
+import 'package:lepton_papeo/view/widget/iconbg_widget.dart';
+import 'package:lepton_papeo/view/widget/search_bar.dart';
+import 'package:lepton_papeo/view/widget/text_widget.dart';
 
 class HalfHomePage extends StatelessWidget {
   const HalfHomePage({super.key});
@@ -21,19 +22,22 @@ class HalfHomePage extends StatelessWidget {
     var size =MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
+        
       appBar: PreferredSize(
-         preferredSize: Size.fromHeight(80),
+         preferredSize: Size.fromHeight(72.h),
         child: AppBar(
           
           backgroundColor: 
-           Colors.transparent,elevation: 0,
+          backgroundColor,elevation: 0,
+          //cred,
+          // Colors.transparent,elevation: 0,
         
           leading:  Padding(
-            padding:  EdgeInsets.only(left: 8.w),
+            padding:  EdgeInsets.only(left: 2.w),
             child: IconButton(onPressed: () {
                    
                  },
-                 icon:  Icon(Icons.menu,color: cblack,size: 40.w,)),
+                 icon:  Icon(Icons.menu,color: primary,size: 30.w,)),
           ),
             //   centerTitle: ,
           title: 
@@ -45,33 +49,36 @@ class HalfHomePage extends StatelessWidget {
            ),
            actions: [
              Container(
-              margin: EdgeInsets.only(right: 15),
+              margin: EdgeInsets.only(right: 10.w),
                child: IconButton(onPressed: () {
                    
                  },
-                 icon: const Icon(Icons.shopping_cart,color: cblack,size: 40,)),
+                 icon: const Icon(Icons.shopping_cart,color: primary,size: 36,)),
              ),
                     ],
         ),
       ),
-        backgroundColor: cwhite,
+        backgroundColor: backgroundColor,
         //backgroundColor,
        //  const Color.fromARGB(205, 35, 57, 79),
         body: SingleChildScrollView(
           child: SizedBox(
-            height: 800,
-            //size.height,
+            height: 
+            size.height,
             child: Column(
-                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                   mainAxisAlignment: MainAxisAlignment.start,
+                  
               children: [  
+                sh20,
                  Container(
-                   height: 560,
+                   height: 450.h,
                    width: double.infinity,
                    child: Carosel(),
                    ),
+                   sh50,
                 Container(
                    //margin: EdgeInsets.only(left: 10),
-                  height: 70,
+                  height: 60.h,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
@@ -85,7 +92,7 @@ class HalfHomePage extends StatelessWidget {
                           padding: EdgeInsets.only(left: 20),
                           child: ScrollingCateogryWidget(
                             width: 150,
-                            text: 'Breakfast',color: Colors.red),
+                            text: 'Breakfast',),
                         )),
                      GestureDetector(
                         onTap: () {
@@ -95,7 +102,7 @@ class HalfHomePage extends StatelessWidget {
                           padding: EdgeInsets.only(left: 20),
                           child: ScrollingCateogryWidget(
                             width: 150,
-                            text: 'Lunch' ,color: Colors.green),
+                            text: 'Lunch' ,),
                         )),
                       GestureDetector(
                         onTap: () {
@@ -105,7 +112,7 @@ class HalfHomePage extends StatelessWidget {
                           padding: EdgeInsets.only(left: 20),
                           child: ScrollingCateogryWidget(
                             width: 150,
-                            text :'Dinner',color: Colors.purple ),
+                            text :'Dinner', ),
                         )),
                       GestureDetector(
                         onTap: () {
@@ -115,19 +122,29 @@ class HalfHomePage extends StatelessWidget {
                           padding: EdgeInsets.only(left: 20),
                           child: ScrollingCateogryWidget(
                             width: 150,
-                            text: 'Veg and Non',color: Colors.orange),
+                            text: 'Veg and Non',),
                         )),
                      
                     ],
                   ),
                 ),
+                sh20,
+                sh20,
+                 
+                  Card(
+  child: Column(
+    children: [
+      Image.asset('assets/images/food.jpg'),
+      ListTile(
+        title: Text('Breakfast'),
+        subtitle: Text('items'),
+        trailing: Icon(Icons.more_vert),
+      ),
+    ],
+  ),
+)
                
-            // SizedBox(height: 20,),
-            // TextButton.icon(onPressed: () {
-              
-            // }, 
-            // icon: Icon(Icons.favorite_sharp,color: Colors.red),
-            //  label: GoogleMonstserratWidgets(text: 'My Fav', fontsize: 18))
+            
               ],
             ),
           ),
@@ -163,9 +180,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
       onTap: _onTabTapped,
-       backgroundColor: const Color.fromARGB(205, 35, 57, 79), // Set the background color here
-      selectedItemColor: Colors.white, // Set the selected item color here
-      unselectedItemColor: Colors.grey,
+       backgroundColor: Color(0XFFffd04e), // Set the background color here
+      selectedItemColor: cblack, // Set the selected item color here
+      unselectedItemColor: cred,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
@@ -214,9 +231,10 @@ class ScrollingCateogryWidget extends StatelessWidget {
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
                         colors: [
-                          Color(0xFF181b2a),
-                          //  Color.fromARGB(255, 76, 98, 146),
-                          Color(0xFF23394f),
+                             Color(0XFFF2BC57),
+    Color(0XFFF2BC57),
+
+
                         ],
                       ),
 
@@ -227,7 +245,7 @@ class ScrollingCateogryWidget extends StatelessWidget {
       child: Center(
         child: GoogleMonstserratWidgets(
           fontsize: 14,
-          text: text,color: cwhite),
+          text: text,color: cblack),
       ),
      
     );
