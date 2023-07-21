@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/view/homepage/home_Page.dart';
+
+import 'package:lepton_papeo/view/sruthi/Pages/food_menu.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( const MyApp());
   ScreenUtil.ensureScreenSize();
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -16,15 +17,15 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
        minTextAdapt: true,
         splitScreenMode: true,
-        designSize: const Size(423.5294196844927, 945.8823706287004),
+        designSize:  const Size(423.5294196844927, 945.8823706287004),
       builder: (context,child) {
-        return const MaterialApp(
+        return  const MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'lepton papeo',
          
           home: 
           
-          HalfHomePage()
+          FoodMenu()
         );
       }
     );

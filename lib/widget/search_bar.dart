@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lepton_papeo/colors/colors.dart';
+import 'package:lepton_papeo/view/colors/colors.dart';
+
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({

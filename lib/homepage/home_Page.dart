@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lepton_papeo/carosel_slider.dart/carosel_slider.dart';
-import 'package:lepton_papeo/colors/colors.dart';
+
 import 'package:lepton_papeo/demo.dart';
 import 'package:lepton_papeo/fonts/googleMonstre.dart';
+import 'package:lepton_papeo/view/colors/colors.dart';
 import 'package:lepton_papeo/widget/iconbg_widget.dart';
 import 'package:lepton_papeo/widget/search_bar.dart';
 import 'package:lepton_papeo/widget/text_widget.dart';
