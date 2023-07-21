@@ -13,6 +13,7 @@ const primary = Color.fromARGB(255, 91, 114,163);
 const cwhite = Colors.white;
 const cblack = Colors.black;
 const cred = Colors.red;
+const primarycolor = Color.fromARGB(255, 91, 114, 163);
 
 const lGradient = LinearGradient(
   colors: [
@@ -32,3 +33,4 @@ const llGradient = LinearGradient(
     Color.fromARGB(255, 91, 114, 163),
   ],
 );
+
