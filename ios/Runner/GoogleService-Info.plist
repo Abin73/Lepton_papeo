@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>522712915373-4eel21qllh36lv8bqgd823vnol32s6n5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.522712915373-4eel21qllh36lv8bqgd823vnol32s6n5</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>522712915373-m7fo6kaluvlu50o9qanpunqi4ofq91ah.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDFUzTxHJ1bJhdOB2sZ5Zdu-XRiuPZHTGA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>522712915373</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.leptonPapeo</string>
+	<key>PROJECT_ID</key>
+	<string>lepton-sapor</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lepton-sapor.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:522712915373:ios:7176adaf88815d95585524</string>
+</dict>
+</plist>

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "522712915373",
+    "project_id": "lepton-sapor",
+    "storage_bucket": "lepton-sapor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522712915373:android:ff50c1947ba6284b585524",
+        "android_client_info": {
+          "package_name": "com.lepton_sapor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522712915373-9eaeb4tq3csorpsr3t602u806p5k4uqe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkJSf20Rbz3dtqxGzA2H7LuMjfiHcfvuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522712915373-9eaeb4tq3csorpsr3t602u806p5k4uqe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "522712915373-4eel21qllh36lv8bqgd823vnol32s6n5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.leptonPapeo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

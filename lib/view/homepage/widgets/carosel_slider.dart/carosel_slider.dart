@@ -138,120 +138,129 @@ class Carosel extends StatelessWidget {
       child: Scaffold(
         backgroundColor: backgroundColor,
         // const Color.fromARGB(205, 35, 57, 79),
-        body: Container(
-          decoration: BoxDecoration(
-              color: backgroundColor,
-              borderRadius: BorderRadius.all(Radius.circular(15.w))),
-          margin: EdgeInsets.only(left: 1),
-          child: Center(
-            child: CarouselSlider(
-              options: CarouselOptions(
-                height: 490.h,
+        body: Center(
+          child: Container(
+            width: MediaQuery.of(context).size.width*0.83,
+            height: 1200.h,
+            decoration: BoxDecoration(
+                color: backgroundColor,
+                borderRadius: BorderRadius.all(Radius.circular(15.w))),
+            margin: EdgeInsets.only(left: 1),
+            child: Center(
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  height: 1000.h,
                 autoPlay: true,
-                enlargeCenterPage: true,
-                enableInfiniteScroll: true,
-              ),
-              items: imageList.map((imagePath) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 20),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 5.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(16.w)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.9),
-                              offset: Offset(0, 3),
-                              blurRadius: 6,
-                              spreadRadius: 2,
-                            ),
-                          ],
-                            color: backgroundColor,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.grey),
+                 // autoPlay: true,
+                  aspectRatio: 4/5,
+                  enlargeCenterPage: true,
+                  enableInfiniteScroll: true,
+                ),
+                items: imageList.map((imagePath) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          margin: EdgeInsets.symmetric(horizontal: 5.0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(16.w)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.9),
+                                offset: Offset(0, 3),
+                                blurRadius: 6,
+                                spreadRadius: 2,
                               ),
-                              height: 220.h,
-                              width: 450.w,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(18.w),
-                                child: Image.asset(
-                                  imagePath,
-                                  fit: BoxFit.fill,
+                            ],
+                              color: backgroundColor,
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(color: Colors.grey),
+                                ),
+                                height: 220.h,
+                                width: 450.w,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(18.w),
+                                  child: Image.asset(
+                                    imagePath,
+                                    fit: BoxFit.fill,
+                                  ),
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(left:15.w),
-                              child: Row(
-                                children: [
-                                  Container(
-                                    child: GoogleMonstserratWidgets(
-                                      text: 'Our Specials:',
-                                      fontsize: 15.w,
+                              Padding(
+                                padding:  EdgeInsets.only(left:15.w,top: 20.h),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      child: GoogleMonstserratWidgets(
+                                        text: 'Our Specials:',
+                                        fontsize: 15.w,
+                                        color: cblack,
+                                      ),
+                                    ),
+                                    sw50,
+                                    TextButton.icon(
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => MenuPage(),
+                                          ),
+                                        );
+                                      },
+                                      
+                                      label: GoogleMonstserratWidgets(
+                                        text: ' ',
+                                        fontsize: 16.w,
+                                      ),
+                                      icon: Icon(Icons.arrow_forward,size: 32.w),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding:  EdgeInsets.only(left:15.w,top: 20.h),
+                                child: Column(
+                                  children: [
+                                    GoogleMonstserratWidgets(
+                                      text: 'Time:',
+                                      fontsize: 13.5.w,
                                       color: cblack,
                                     ),
-                                  ),
-                                  sw50,
-                                  TextButton.icon(
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => MenuPage(),
-                                        ),
-                                      );
-                                    },
-                                    icon: Icon(Icons.menu),
-                                    label: GoogleMonstserratWidgets(
-                                      text: ' menu',
-                                      fontsize: 16.w,
-                                    ),
-                                  ),
-                                ],
+                                sh20,
+                                GoogleMonstserratWidgets(
+                                  text: 'Location:',
+                                  fontsize: 13.5.w,
+                                  color: cblack,
+                                ),
+                                sh20,
+                                GoogleMonstserratWidgets(
+                                  text: 'About  ' "tdrgukhg vfycyudt drdtrdfugcxugyufyrdfufu"
+                                  "grsuyjfcjg",
+                                  fontsize: 13.5.w,
+                                  color: cblack,
+                                ),
+                               // SizedBox(height: 20.h,)
+                                
+                                  ],
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.only(left:15.w),
-                              child: Column(
-                                children: [
-                                  GoogleMonstserratWidgets(
-                                    text: 'Time:',
-                                    fontsize: 13.5.w,
-                                    color: cblack,
-                                  ),
-                              sh20,
-                              GoogleMonstserratWidgets(
-                                text: 'Location:',
-                                fontsize: 13.5.w,
-                                color: cblack,
-                              ),
-                              sh20,
-                              GoogleMonstserratWidgets(
-                                text: 'About:',
-                                fontsize: 13.5.w,
-                                color: cblack,
-                              ),
-                              
-                                ],
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    );
-                  },
-                );
-              }).toList(),
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
             ),
           ),
         ),
