@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lepton_papeo/view/menu%20items%20page/menu_page.dart';
 
 import 'package:lepton_papeo/view/sruthi/Pages/food_menu.dart';
+import 'package:lepton_papeo/view/sruthi/Pages/menu_card.dart';
 
 void main() {
   runApp( const MyApp());
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
          
           home: 
           
-          FoodMenu()
+          MenuPage()
         );
       }
     );
