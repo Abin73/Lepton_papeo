@@ -119,6 +119,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lepton_papeo/view/colors/colors.dart';
 import 'package:lepton_papeo/view/constant/constant.dart';
 import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
+import 'package:lepton_papeo/view/sruthi/Pages/food_menu.dart';
 
 import '../../../menu items page/menu_page.dart';
 
@@ -212,13 +213,13 @@ class Carosel extends StatelessWidget {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => MenuPage(),
+                                            builder: (context) => FoodMenu(),
                                           ),
                                         );
                                       },
                                       
                                       label: GoogleMonstserratWidgets(
-                                        text: ' ',
+                                        text: 'Menu',
                                         fontsize: 16.w,
                                       ),
                                       icon: Icon(Icons.arrow_forward,size: 32.w),
@@ -243,8 +244,8 @@ class Carosel extends StatelessWidget {
                                 ),
                                 sh20,
                                 GoogleMonstserratWidgets(
-                                  text: 'About  ' "tdrgukhg vfycyudt drdtrdfugcxugyufyrdfufu"
-                                  "grsuyjfcjg",
+                                  text: 'About  ',
+                        
                                   fontsize: 13.5.w,
                                   color: cblack,
                                 ),

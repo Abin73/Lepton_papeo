@@ -6,6 +6,7 @@ import 'package:lepton_papeo/view/drawer/drawer.dart';
 import 'package:lepton_papeo/view/homepage/widgets/carosel_slider.dart/carosel_slider.dart';
 import 'package:lepton_papeo/view/colors/colors.dart';
 import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
+import 'package:lepton_papeo/view/sruthi/Pages/food_menu.dart';
 import 'package:lepton_papeo/view/widget/search_bar.dart';
 
 
@@ -147,12 +148,12 @@ class _HalfHomePageState extends State<HalfHomePage>
                    child: TabBarView(
                      controller: _tabController,
                      children: [
-
-                       ListViewBuilderWidget(
-                        image: 'assets/images/sapor_bg.png',
-                       text: 'Item ',
-                       description: "description",
-                       ),
+FoodMenu(),
+                      //  ListViewBuilderWidget(
+                      //   image: 'assets/images/sapor_bg.png',
+                      //  text: 'Item ',
+                      //  description: "description",
+                      //  ),
                        
                     
                      ListViewBuilderWidget(
@@ -245,10 +246,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
       onTap: _onTabTapped,
-      backgroundColor: Color.fromARGB(255, 91, 114,163),
+      backgroundColor: primary,
       //Color(0XFFffd04e), // Set the background color here
-      selectedItemColor: cwhite, // Set the selected item color here
-      unselectedItemColor: cblack,
+      selectedItemColor: Colors.blue, // Set the selected item color here
+      unselectedItemColor: cwhite,
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
