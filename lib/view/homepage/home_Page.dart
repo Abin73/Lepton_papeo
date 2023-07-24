@@ -97,9 +97,9 @@ class _HalfHomePageState extends State<HalfHomePage>
                   width: double.infinity,
                   child: Carosel(),  /////////////////////////////////////////  Carosel slider    
                 ),
-                sh50,
+                //sh25,
                 
-                // sh20,
+                 sh20,
                 // sh20,
                 
 
@@ -107,16 +107,21 @@ class _HalfHomePageState extends State<HalfHomePage>
                  
                   
                    child: TabBar(
-                    dividerColor: primary,
+                  //  dividerColor: ,
+                    indicatorColor: Colors.white,
                      controller: _tabController,
                      tabs: [
-                       Tab(child: Container(
+                       Container(
+                        height: 100.h,
                          decoration: BoxDecoration(
-                    color: primary, 
-                    borderRadius: BorderRadius.all(Radius.circular(10.w))
-                    ),
-                        child: Center(child: GoogleMonstserratWidgets(
-                          text: 'Breakfast', fontsize: 13.w,color: cwhite,)))),
+                                           color: primary, 
+                                           shape: BoxShape.circle,
+                                       //  borderRadius: BorderRadius.all(Radius.circular(50.w))
+                                           ),
+                        
+                         child: Tab(child: Center(child: GoogleMonstserratWidgets(
+                           text: 'Breakfast', fontsize: 10.w,color: cwhite,))),
+                       ),
 
 
                        Tab(child:Container(
@@ -147,13 +152,13 @@ class _HalfHomePageState extends State<HalfHomePage>
                  Expanded(
                    child: TabBarView(
                      controller: _tabController,
-                     children: [
-FoodMenu(),
-                      //  ListViewBuilderWidget(
-                      //   image: 'assets/images/sapor_bg.png',
-                      //  text: 'Item ',
-                      //  description: "description",
-                      //  ),
+                     children: [ 
+                      //FoodMenu(),
+                       ListViewBuilderWidget(
+                        image: 'assets/images/sapor_bg.png',
+                       text: 'Item ',
+                       description: "description",
+                       ),
                        
                     
                      ListViewBuilderWidget(

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:lepton_papeo/fonts/googleMonstre.dart';
 import 'package:lepton_papeo/view/colors/colors.dart';
 import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
 

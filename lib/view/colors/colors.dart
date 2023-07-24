@@ -35,3 +35,12 @@ const llGradient = LinearGradient(
   ],
 );
 
+  final List<Color> colors = [
+    Color(0xFF083663),
+    Color(0xFF083663),
+    Color(0xFF083663),
+    Color(0xFF083663),
+    Color(0xFF083663),
+    Color(0xFF083663),
+    Color(0xFF083663),
+  ];
