@@ -157,30 +157,30 @@ class _CaroselState extends State<Carosel> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: Color.fromARGB(255, 91, 114,163),
         // const Color.fromARGB(205, 35, 57, 79),
         body: Center(
           child: 
           Padding(
-            padding:  EdgeInsets.all(20),
+            padding:  EdgeInsets.only(left: 15,right: 15),
             child: Container(
-                height: 500.w,
+             // decoration: BoxDecoration(gradient: llGradient),
+                  height: 1000.w,
                 child: CarouselSlider.builder(
                   unlimitedMode: true,
                   controller: _sliderController,
                   slideBuilder: (index) {
                     return Container(
-                      decoration: BoxDecoration(
-                        color: colors[index],
+                      decoration: const BoxDecoration(
+                        gradient: llGradient,
+                       // color: colors[index],
                         borderRadius: BorderRadius.all(
                           Radius.circular(0),
                         ),
-                      ), //BorderRadi),
-                      //alignment: Alignment.center,
+                      ), 
                       child: Container(
                         height: 300,
-                        //width: 400,
-                        //color: Colors.white,
+            
                         child: Column(
                           children: [
                             Container(

@@ -6,6 +6,7 @@ import 'package:lepton_papeo/view/drawer/drawer.dart';
 import 'package:lepton_papeo/view/homepage/widgets/carosel_slider.dart/carosel_slider.dart';
 import 'package:lepton_papeo/view/colors/colors.dart';
 import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
+import 'package:lepton_papeo/view/menu%20items%20page/menu_list.dart';
 import 'package:lepton_papeo/view/sruthi/Pages/food_menu.dart';
 import 'package:lepton_papeo/view/widget/search_bar.dart';
 
@@ -41,7 +42,7 @@ class _HalfHomePageState extends State<HalfHomePage>
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(72.h),
           child: AppBar(
-            backgroundColor: backgroundColor, elevation: 0,
+            backgroundColor: Color.fromARGB(255, 3, 5, 8), elevation: 0,
             //cred,
             // Colors.transparent,elevation: 0,
 
@@ -49,7 +50,7 @@ class _HalfHomePageState extends State<HalfHomePage>
           builder: (BuildContext context) {
             return IconButton(
               icon: Icon(Icons.menu,
-              color: primary,
+              color: cwhite,
               size: 32.w,),
               onPressed: () {
                 Scaffold.of(context).openDrawer(); // This is to open the side drawer when the icon is pressed.
@@ -57,27 +58,22 @@ class _HalfHomePageState extends State<HalfHomePage>
             );
           },
         ),
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                SearchBarWidget(),
-              ],
-            ),
+            title: SearchBarWidget(),
             actions: [
               Container(
                 margin: EdgeInsets.only(right: 10.w),
                 child: IconButton(
                     onPressed: () {},
-                    icon: const Icon(
+                    icon:  Icon(
                       Icons.shopping_cart,
-                      color: primary,
-                      size: 36,
+                      color: cwhite,
+                      size: size.width/11,
                     )),
               ),
             ],
           ),
         ),
-        backgroundColor: backgroundColor,
+        backgroundColor: Color.fromARGB(255, 91, 114,163),
 
        drawer: Drawer(
 
@@ -85,6 +81,7 @@ class _HalfHomePageState extends State<HalfHomePage>
       ),
         body: SingleChildScrollView(
           child: SizedBox(
+          
             height: size.height,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -93,7 +90,10 @@ class _HalfHomePageState extends State<HalfHomePage>
 
 
                 Container(
-                  height: 450.h,
+                  // decoration: BoxDecoration(
+                  //   color: Color.fromARGB(255, 91, 114,163),
+                  //   ),
+                  height: 440.h,
                   width: double.infinity,
                   child: Carosel(),  /////////////////////////////////////////  Carosel slider    
                 ),
@@ -114,37 +114,44 @@ class _HalfHomePageState extends State<HalfHomePage>
                        Container(
                         height: 100.h,
                          decoration: BoxDecoration(
-                                           color: primary, 
+                                         gradient: llGradient,
                                            shape: BoxShape.circle,
                                        //  borderRadius: BorderRadius.all(Radius.circular(50.w))
                                            ),
                         
                          child: Tab(child: Center(child: GoogleMonstserratWidgets(
-                           text: 'Breakfast', fontsize: 10.w,color: cwhite,))),
+                           text: 'Breakfast', fontsize: 12.w,color: cwhite,))),
                        ),
 
 
-                       Tab(child:Container(
+                       Container(
+                        height: 100.h,
                          decoration: BoxDecoration(
-                    color: primary, 
-                    borderRadius: BorderRadius.all(Radius.circular(10.w))
-                    ),
-                        child: Center(child: GoogleMonstserratWidgets(text: 'Lunch', fontsize: 13.w,color: cwhite,))) ),
+                                         gradient: llGradient,
+                                           shape: BoxShape.circle,
+                                       //  borderRadius: BorderRadius.all(Radius.circular(50.w))
+                                           ),
+                        child: Tab(child:Center(child: GoogleMonstserratWidgets(text: 'Lunch', fontsize: 13.w,color: cwhite,)) )),
 
 
-                       Tab(child:Container(
+                       Container(
+                        height: 100.h,
                          decoration: BoxDecoration(
-                    color: primary, 
-                    borderRadius: BorderRadius.all(Radius.circular(10.w))
-                    ),   
-                        child: Center(child: GoogleMonstserratWidgets(text: 'Dinner', fontsize: 13.w,color: cwhite,))),),
-                       Tab(child:Container(
+                                         gradient: llGradient,
+                                           shape: BoxShape.circle,
+                                       //  borderRadius: BorderRadius.all(Radius.circular(50.w))
+                                           ),
+                        
+                        child: Tab(child:Center(child: GoogleMonstserratWidgets(text: 'Dinner', fontsize: 13.w,color: cwhite,)),)),
+                       Container(
+                        height: 100.h,
                          decoration: BoxDecoration(
-                    color: primary, 
-                    borderRadius: BorderRadius.all(Radius.circular(10.w))
-                    ),child: Container(
-
-                       child: Center(child: GoogleMonstserratWidgets(text: 'Special', fontsize: 13.w,color: cwhite,)))) ),
+                                         gradient: llGradient,
+                                           shape: BoxShape.circle,
+                                       //  borderRadius: BorderRadius.all(Radius.circular(50.w))
+                                           ),
+                        
+                        child: Tab(child:Center(child: GoogleMonstserratWidgets(text: 'Special', fontsize: 13.w,color: cwhite,)) )),
                      ],
                    ),
                  ),
@@ -153,12 +160,13 @@ class _HalfHomePageState extends State<HalfHomePage>
                    child: TabBarView(
                      controller: _tabController,
                      children: [ 
+                      MenuListItems(),
                       //FoodMenu(),
-                       ListViewBuilderWidget(
-                        image: 'assets/images/sapor_bg.png',
-                       text: 'Item ',
-                       description: "description",
-                       ),
+                      //  ListViewBuilderWidget(
+                      //   image: 'assets/images/sapor_bg.png',
+                      //  text: 'Item ',
+                      //  description: "description",
+                      //  ),
                        
                     
                      ListViewBuilderWidget(
@@ -249,9 +257,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+    
       currentIndex: _currentIndex,
       onTap: _onTabTapped,
-      backgroundColor: primary,
+      backgroundColor: Color.fromARGB(255, 3, 5, 8),
       //Color(0XFFffd04e), // Set the background color here
       selectedItemColor: Colors.blue, // Set the selected item color here
       unselectedItemColor: cwhite,
@@ -264,9 +273,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: Icon(Icons.menu),
           label: 'Food',
         ),
+        //  BottomNavigationBarItem(
+        //   icon: Icon(Icons.menu),
+        //   label: 'Food',
+        // ),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite_sharp, color: Colors.red),
           label: 'My Fav',
+        ),
+
+        BottomNavigationBarItem(
+          icon: Icon(Icons.abc, color: Colors.red),
+          label: 'Offers',
         ),
       ],
     );

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/view/homepage/home_Page.dart';
+import 'package:lepton_papeo/signin/pages/google_signing_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:lepton_papeo/view/sruthi/Pages/homepage.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async{
@@ -23,10 +25,14 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         designSize: const Size(423.5294196844927, 945.8823706287004),
         builder: (context,child) {
-        return const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'lepton sapor',
-          home: HalfHomePage()
+        return 
+        ChangeNotifierProvider<GoogleSignInProvider>(
+         create: (BuildContext context) => GoogleSignInProvider(),
+          child: const MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'lepton sapor',
+            home: HomePage()
+          ),
         );
       }
     );
