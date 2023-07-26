@@ -3,10 +3,10 @@ import 'dart:html';
 import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
-import 'package:lepton_papeo/view/sruthi/Pages/homepage.dart';
+import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
+import 'package:lepton_sapor/view/sruthi/Pages/homepage.dart';
 
-import '../../homepage/home_Page.dart';
+import '../../homepage/second_home.dart';
 
 
 class SplashScreen extends StatefulWidget {

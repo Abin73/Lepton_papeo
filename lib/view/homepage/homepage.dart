@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:lepton_papeo/signin/pages/google_signup.dart';
-import 'package:lepton_papeo/view/homepage/home_Page.dart';
+import 'package:lepton_sapor/signin/pages/google_signup.dart';
+import 'package:lepton_sapor/view/homepage/second_home.dart';
 
 
 

@@ -1,14 +1,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/view/constant/constant.dart';
-import 'package:lepton_papeo/view/drawer/drawer.dart';
-import 'package:lepton_papeo/view/homepage/widgets/carosel_slider.dart/carosel_slider.dart';
-import 'package:lepton_papeo/view/colors/colors.dart';
-import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
-import 'package:lepton_papeo/view/menu%20items%20page/menu_list.dart';
-import 'package:lepton_papeo/view/sruthi/Pages/food_menu.dart';
-import 'package:lepton_papeo/view/widget/search_bar.dart';
+import 'package:lepton_sapor/view/constant/constant.dart';
+import 'package:lepton_sapor/view/drawer/drawer.dart';
+import 'package:lepton_sapor/view/homepage/widgets/carosel_slider.dart/carosel_slider.dart';
+import 'package:lepton_sapor/view/colors/colors.dart';
+import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
+import 'package:lepton_sapor/view/menu%20items%20page/menu_list.dart';
+import 'package:lepton_sapor/view/widget/bottomnavbar/bottom_nav_bar.dart';
+import 'package:lepton_sapor/view/widget/search_bar.dart';
 
 
 class HalfHomePage extends StatefulWidget {
@@ -67,7 +67,7 @@ class _HalfHomePageState extends State<HalfHomePage>
                     icon:  Icon(
                       Icons.shopping_cart,
                       color: cwhite,
-                      size: size.width/11,
+                      size: size.width/12,
                     )),
               ),
             ],
@@ -77,7 +77,7 @@ class _HalfHomePageState extends State<HalfHomePage>
 
        drawer: Drawer(
 
-        child: DemoDrawer(),
+        child: SideDrawer(),
       ),
         body: SingleChildScrollView(
           child: SizedBox(
@@ -161,6 +161,9 @@ class _HalfHomePageState extends State<HalfHomePage>
                      controller: _tabController,
                      children: [ 
                       MenuListItems(),
+                      MenuListItems(),
+                      MenuListItems(),
+                      MenuListItems(),
                       //FoodMenu(),
                       //  ListViewBuilderWidget(
                       //   image: 'assets/images/sapor_bg.png',
@@ -169,25 +172,25 @@ class _HalfHomePageState extends State<HalfHomePage>
                       //  ),
                        
                     
-                     ListViewBuilderWidget(
-                        image: 'assets/images/fish.jpg',
-                       text: 'Item ',
-                       description: "description",
-                       ),
+                    //  ListViewBuilderWidget(
+                    //     image: 'assets/images/fish.jpg',
+                    //    text: 'Item ',
+                    //    description: "description",
+                    //    ),
 
 
-                        ListViewBuilderWidget(
-                        image: 'assets/images/curry.png',
-                       text: 'Item ',
-                       description: "description",
-                       ),
+                    //     ListViewBuilderWidget(
+                    //     image: 'assets/images/curry.png',
+                    //    text: 'Item ',
+                    //    description: "description",
+                    //    ),
 
 
-                        ListViewBuilderWidget(
-                        image: 'assets/images/food.jpg',
-                       text: 'Item ',
-                       description: "description",
-                       ),
+                    //     ListViewBuilderWidget(
+                    //     image: 'assets/images/food.jpg',
+                    //    text: 'Item ',
+                    //    description: "description",
+                    //    ),
 
 
 
@@ -198,7 +201,7 @@ class _HalfHomePageState extends State<HalfHomePage>
             ),
           ),
         ),
-        bottomNavigationBar: const BottomNavBar(),
+        bottomNavigationBar:  BottomNavBar(),
       ),
     );
   }
@@ -257,6 +260,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
     
       currentIndex: _currentIndex,
       onTap: _onTabTapped,
@@ -264,28 +268,25 @@ class _BottomNavBarState extends State<BottomNavBar> {
       //Color(0XFFffd04e), // Set the background color here
       selectedItemColor: Colors.blue, // Set the selected item color here
       unselectedItemColor: cwhite,
-      items: const [
+      items:  const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
         ),
-        BottomNavigationBarItem(
+        
+         BottomNavigationBarItem(
           icon: Icon(Icons.menu),
           label: 'Food',
         ),
-        //  BottomNavigationBarItem(
-        //   icon: Icon(Icons.menu),
-        //   label: 'Food',
-        // ),
         BottomNavigationBarItem(
+          icon: Icon(Icons.percent,),
+          label: 'Offers',
+        ),
+         BottomNavigationBarItem(
           icon: Icon(Icons.favorite_sharp, color: Colors.red),
           label: 'My Fav',
         ),
 
-        BottomNavigationBarItem(
-          icon: Icon(Icons.abc, color: Colors.red),
-          label: 'Offers',
-        ),
       ],
     );
   }

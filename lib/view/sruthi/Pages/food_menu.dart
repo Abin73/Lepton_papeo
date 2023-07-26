@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lepton_papeo/view/colors/colors.dart';
-import 'package:lepton_papeo/view/constant/constant.dart';
-import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
-import 'package:lepton_papeo/view/sruthi/Pages/menu_card.dart';
+import 'package:lepton_sapor/view/colors/colors.dart';
+import 'package:lepton_sapor/view/constant/constant.dart';
+import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
+import 'package:lepton_sapor/view/sruthi/Pages/menu_card.dart';
 
 class FoodMenu extends StatelessWidget {
   const FoodMenu({super.key});

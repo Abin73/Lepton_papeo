@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lepton_papeo/view/colors/colors.dart';
-import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
+import 'package:lepton_sapor/view/colors/colors.dart';
+import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});

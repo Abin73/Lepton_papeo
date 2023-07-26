@@ -117,7 +117,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/view/colors/colors.dart';
+import 'package:lepton_sapor/view/colors/colors.dart';
 
 
 List<String> imageList = [

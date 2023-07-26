@@ -1,41 +1,55 @@
-
-import 'package:flutter/material.dart';
-// import 'package:botton_nav_bar/botton_nav_bar.dart';
 // import 'package:flutter/material.dart';
+// import 'package:lepton_papeo/view/homepage/homepage.dart';
 
-// class MyApp extends StatelessWidget {
+// class MyBottomNavigationBar extends StatefulWidget {
 //   @override
-//   Widget build(BuildContext context) => Scaffold(
-//         body: BottomNavBar(
-//           notchedRadius: 30,
-//           centerNotched: false,
-//           fabIcon: Icon(Icons.qr_code),
-//           bottomItems: <BottomBarItem>[
-//             BottomBarItem(
-//               bottomItemSelectedColor: Colors.green,
-//               label: 'Screen 1',
-//               screen: const Text('A'),
-//               selectedIcon: Icons.collections_bookmark_outlined,
-//             ),
-//             BottomBarItem(
-//               bottomItemSelectedColor: Colors.green,
-//               label: 'Screen 2',
-//               screen: const Text('B'),
-//               selectedIcon: Icons.search_rounded,
-//             ),
-//             BottomBarItem(
-//               bottomItemSelectedColor: Colors.green,
-//               label: 'Screen 3',
-//               selectedIcon: Icons.menu_open_rounded,
-//               screen: const Text('C'),
-//             ),
-//             BottomBarItem(
-//               bottomItemSelectedColor: Colors.green,
-//               label: 'Screen 4',
-//               screen: const Text('D'),
-//               selectedIcon: Icons.notifications_active,
-//             )
-//           ],
-//         ),
-//       );
+//   _MyBottomNavigationBarState createState() => _MyBottomNavigationBarState();
+// }
+
+// class _MyBottomNavigationBarState extends State<MyBottomNavigationBar> {
+//   int _selectedIndex = 0;
+
+//   // Define your page views here, such as:
+//   final List<Widget> _pages = [
+//     HomePage(),
+//     HomePage(),
+//     HomePage(),
+//     HomePage(),
+//   ];
+
+//   void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: _pages[_selectedIndex],
+//       bottomNavigationBar: BottomNavigationBar(
+//         type: BottomNavigationBarType.fixed, // Use fixed type if you have more than 3 items
+//         currentIndex: _selectedIndex,
+//         onTap: _onItemTapped,
+//         items: <BottomNavigationBarItem>[
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: 'Home',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.explore),
+//             label: 'Explore',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.favorite),
+//             label: 'Favorites',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.person),
+//             label: 'Profile',
+//           ),
+//         ],
+//       ),
+//     );
+//   }
 // }

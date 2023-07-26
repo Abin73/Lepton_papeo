@@ -3,8 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lepton_papeo/view/colors/colors.dart';
-import 'package:lepton_papeo/view/menu%20items%20page/menu_info.dart';
+import 'package:lepton_sapor/view/colors/colors.dart';
+import 'package:lepton_sapor/view/menu%20items%20page/menu_info.dart';
 
 
 
@@ -103,61 +103,67 @@ class _MenuListItemsState extends State<MenuListItems> {
               ),
             ),
             FittedBox(
-              child: Card(
-                // color: Colors.red,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                elevation: 5,
-                child: Container(
-                   decoration: BoxDecoration(gradient: llGradient,
-                       borderRadius: BorderRadius.circular(15.0),),
-                  child: Row(
-                    children: <Widget>[
-                      pizzaitem(),
-                      Container(
-                        width: 90,
-                        height: 100,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15.0),
-                          child: const Image(
-                            fit: BoxFit.cover,
-                            alignment: Alignment.topRight,
-                            image: AssetImage('assets/images/pizza.jpg'),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Card(
+                  // color: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  elevation: 5,
+                  child: Container(
+                     decoration: BoxDecoration(gradient: llGradient,
+                         borderRadius: BorderRadius.circular(15.0),),
+                    child: Row(
+                      children: <Widget>[
+                        pizzaitem(),
+                        Container(
+                          width: 90,
+                          height: 100,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15.0),
+                            child: const Image(
+                              fit: BoxFit.cover,
+                              alignment: Alignment.topRight,
+                              image: AssetImage('assets/images/pizza.jpg'),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
             FittedBox(
-              child: Card(
-                // color: Colors.red,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                ),
-                elevation: 5,
-                child: Container(
-                   decoration: BoxDecoration(gradient: llGradient,
-                       borderRadius: BorderRadius.circular(15.0),),
-                  child: Row(
-                    children: <Widget>[
-                      eliteitem(),
-                      Container(
-                        width: 90,
-                        height: 100,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(15.0),
-                          child: const Image(
-                            fit: BoxFit.cover,
-                            alignment: Alignment.topRight,
-                            image: AssetImage('assets/images/elite.jpg'),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Card(
+                  // color: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                  ),
+                  elevation: 5,
+                  child: Container(
+                     decoration: BoxDecoration(gradient: llGradient,
+                         borderRadius: BorderRadius.circular(15.0),),
+                    child: Row(
+                      children: <Widget>[
+                        eliteitem(),
+                        Container(
+                          width: 90,
+                          height: 100,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(15.0),
+                            child: const Image(
+                              fit: BoxFit.cover,
+                              alignment: Alignment.topRight,
+                              image: AssetImage('assets/images/elite.jpg'),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

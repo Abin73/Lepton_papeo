@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lepton_papeo/view/colors/colors.dart';
-import 'package:lepton_papeo/view/fonts/googleMonstre.dart';
+import 'package:lepton_sapor/signin/pages/google_signing_provider.dart';
+import 'package:lepton_sapor/view/colors/colors.dart';
+import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
+import 'package:provider/provider.dart';
 
 
-class DemoDrawer extends StatelessWidget {
-  DemoDrawer({Key? key}) : super(key: key);
+class SideDrawer extends StatelessWidget {
+  SideDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,8 @@ class DemoDrawer extends StatelessWidget {
 
               TextButton.icon(
                   onPressed: () async {
-                   
+                   final provider = Provider.of<GoogleSignInProvider>(context,listen: false);
+         provider.logout();
                   },
                   icon:  Icon(Icons.exit_to_app,color: primary,size: 26.w),
                   label:  Text(
