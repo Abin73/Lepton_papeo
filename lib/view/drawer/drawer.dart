@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lepton_sapor/signin/pages/google_signing_provider.dart';
+import 'package:lepton_sapor/view/Admin/admin_homepage.dart';
 import 'package:lepton_sapor/view/colors/colors.dart';
 import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
 import 'package:provider/provider.dart';
@@ -119,7 +120,10 @@ class SideDrawer extends StatelessWidget {
             leading: Icon(Icons.admin_panel_settings_outlined,color: primary,size: 25.w),
             title: GoogleMonstserratWidgets(text: 'Admin Login',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
             onTap: () {
-            
+             Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AdminHomePage()),
+                    );
             },
           ),
         

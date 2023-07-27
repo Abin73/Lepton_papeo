@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lepton_sapor/view/colors/colors.dart';
 import 'package:lepton_sapor/view/constant/constant.dart';
 import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
@@ -50,11 +51,12 @@ class FoodMenu extends StatelessWidget {
               itemBuilder: (BuildContext context, int index) {
                 return SizedBox(
                   height: MediaQuery.of(context).size.height * 0.2,
+                  width: double.infinity,
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding:  EdgeInsets.all(10.w),
                     child: Card(
                       shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(5.w),
                       ),
                       child: ListTile(
                         leading: GestureDetector(
@@ -63,9 +65,7 @@ class FoodMenu extends StatelessWidget {
                                 context, "assets/images/nirvana.jpg");
                           },
                           child: Container(
-                            padding: const EdgeInsets.only(
-                                top:
-                                    10), // Add padding directly to the Image.asset
+                            padding: const EdgeInsets.only(top: 10), // Add padding directly to the Image.asset
                             child: Image.asset(
                               "assets/images/nirvana.jpg",
                               fit: BoxFit.cover,
@@ -73,24 +73,29 @@ class FoodMenu extends StatelessWidget {
                           ),
                         ),
                         title: Padding(
-                          padding: const EdgeInsets.only(top: 10),
+                          padding:  EdgeInsets.only(top: 10.h),
                           child: GoogleMonstserratWidgets(
                             text: "Meals",
-                            fontsize: 25,
+                            fontsize: 25.w,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         subtitle: Padding(
-                          padding: const EdgeInsets.only(top: 10),
+                          padding:  EdgeInsets.only(top: 10.h),
                           child: Column(
                             children: [
-                              GoogleMonstserratWidgets(
-                                text: "What Eating Three Meals A Day Can Do",
-                                fontsize: 15,
-                                //fontWeight: FontWeight.bold,
+                              Container(
+                                width: 250,
+                                color: cred,
+                                child: GoogleMonstserratWidgets(
+                                  text: " Eating Three Meals A Day Can Do",
+                                  fontsize: MediaQuery.of(context).size.width/35
+                                  ,
+                                  //fontWeight: FontWeight.bold,
+                                ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(top: 10),
+                                padding:  EdgeInsets.only(top: 20),
                                 child: Row(
                                   children: [
                                     AddCount(
@@ -102,10 +107,10 @@ class FoodMenu extends StatelessWidget {
                                         repo.decrementCounter(context, index);
                                       },
                                     ),
-                                    sw50,
+                                    sw20,
                                     Container(
-                                      height: 40,
-                                      width: 120,
+                                      height: 40.h,
+                                      width: 110.w,
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(10),
                                         color: const Color.fromARGB(255, 25, 42, 66)
@@ -113,7 +118,7 @@ class FoodMenu extends StatelessWidget {
                                       child: Center(
                                           child: GoogleMonstserratWidgets(
                                         text: "Add to cart",
-                                        fontsize: 16,
+                                        fontsize: 14.w,
                                         fontWeight: FontWeight.bold,
                                         color: cwhite,
                                       )),
@@ -126,7 +131,7 @@ class FoodMenu extends StatelessWidget {
                         ),
                         trailing: GoogleMonstserratWidgets(
                           text: " \$ 2",
-                          fontsize: 25,
+                          fontsize: 25.h,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

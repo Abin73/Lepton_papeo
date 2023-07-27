@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lepton_sapor/view/colors/colors.dart';
 import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
 
@@ -15,7 +16,7 @@ class MenuPage extends StatelessWidget {
             children: [
               Container(
                 width: double.infinity,
-                height: 300,
+                height: 300.h,
                 decoration: const BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(12),

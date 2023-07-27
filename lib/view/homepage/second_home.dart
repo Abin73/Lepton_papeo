@@ -10,6 +10,8 @@ import 'package:lepton_sapor/view/menu%20items%20page/menu_list.dart';
 import 'package:lepton_sapor/view/widget/bottomnavbar/bottom_nav_bar.dart';
 import 'package:lepton_sapor/view/widget/search_bar.dart';
 
+import '../bottomnavbar/bottom_nav_bar.dart';
+
 
 class HalfHomePage extends StatefulWidget {
   const HalfHomePage({super.key});
@@ -42,7 +44,7 @@ class _HalfHomePageState extends State<HalfHomePage>
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(72.h),
           child: AppBar(
-            backgroundColor: Color.fromARGB(255, 3, 5, 8), elevation: 0,
+            backgroundColor: Color.fromARGB(255, 25, 42, 68), elevation: 0,
             //cred,
             // Colors.transparent,elevation: 0,
 
@@ -63,7 +65,9 @@ class _HalfHomePageState extends State<HalfHomePage>
               Container(
                 margin: EdgeInsets.only(right: 10.w),
                 child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DemoCollection(),));
+                    },
                     icon:  Icon(
                       Icons.shopping_cart,
                       color: cwhite,
@@ -264,7 +268,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     
       currentIndex: _currentIndex,
       onTap: _onTabTapped,
-      backgroundColor: Color.fromARGB(255, 3, 5, 8),
+      backgroundColor: Color.fromARGB(255, 25, 42, 68),
       //Color(0XFFffd04e), // Set the background color here
       selectedItemColor: Colors.blue, // Set the selected item color here
       unselectedItemColor: cwhite,
@@ -273,11 +277,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           icon: Icon(Icons.home),
           label: 'Home',
         ),
-        
-         BottomNavigationBarItem(
-          icon: Icon(Icons.menu),
-          label: 'Food',
-        ),
+
         BottomNavigationBarItem(
           icon: Icon(Icons.percent,),
           label: 'Offers',
@@ -285,6 +285,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
          BottomNavigationBarItem(
           icon: Icon(Icons.favorite_sharp, color: Colors.red),
           label: 'My Fav',
+        ),
+         BottomNavigationBarItem(
+          icon: Icon(Icons.insert_emoticon_outlined),
+          label: 'My Sapor',
         ),
 
       ],

@@ -15,7 +15,7 @@ class SearchBarWidget extends StatelessWidget {
      width: ScreenSize.width/1.6,
      height: 45.h,
        decoration: BoxDecoration(
-         color: Color.fromARGB(255, 3, 5, 8),
+        // color: Color.fromARGB(255, 25, 42, 68),
          borderRadius: BorderRadius.circular(10.0),
          border: Border.all(color: cwhite,width: 1),
 
