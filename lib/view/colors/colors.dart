@@ -35,6 +35,8 @@ const llGradient = LinearGradient(
     Color.fromARGB(255, 25, 42, 66),
     Color.fromARGB(255, 91, 114, 163),
   ],
+   begin: Alignment.centerLeft,
+  end: Alignment.centerRight,
 );
 
   final List<Color> colors = [

@@ -47,6 +47,9 @@ dependencies:
   provider: 
   firebase_auth: 
   cloud_firestore: 
+  text_scroll: ^0.2.0
+  toggle_switch: ^2.1.0
+  image_picker: ^1.0.1
 
 
 flutter_icons:

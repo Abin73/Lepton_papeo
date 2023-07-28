@@ -1,6 +1,16 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:lepton_sapor/utils/utils.dart';
+import 'package:lepton_sapor/view/colors/colors.dart';
+import 'package:lepton_sapor/view/constant/constant.dart';
 import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
+import 'package:lepton_sapor/view/menu%20items%20page/widget/menu_dropdown.dart';
+import 'package:lepton_sapor/view/menu%20items%20page/widget/menu_textformwidget.dart';
 
 class CreateMenu extends StatefulWidget {
   const CreateMenu({Key? key}) : super(key: key);
@@ -10,130 +20,201 @@ class CreateMenu extends StatefulWidget {
 }
 
 class _CreateMenuState extends State<CreateMenu> {
+  File? image;
+
+//     Future pickImagefile() async{
+
+//     try{  
+//    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+//    if(image == null) return ;
+//    final imageTemporary = File(image.path );
+//    setState(()=> this.image = imageTemporary);
+//   }  on PlatformException catch (e) {
+//     print("Failed to pick image : $e");
+//   }
+// }
+
+
+    Future pickImagecamera() async{
+
+    try{  
+   final image = await ImagePicker().pickImage(source: ImageSource.camera);
+   if(image == null) return ;
+   final imageTemporary = File(image.path );
+   setState(()=> this.image = imageTemporary);
+  }  on PlatformException catch (e) {
+    print("Failed to pick image : $e");
+  }
+}
+
+
+
+
+
+
+  String selectedTime = "";
+  Future<void> _selectTime(BuildContext context) async {
+    String time = await timePicker(context);
+    setState(() {
+      selectedTime = time;
+    });
+  }
+
+  String selectedTime1 = "";
+  Future<void> _selectTime1(BuildContext context) async {
+    String time = await timePicker(context);
+    setState(() {
+      selectedTime1 = time;
+    });
+  }
+
   List<List<String>> dropdownItems = [
     ['Cuisine1', 'Cuisine2', 'Cuisine3'],
     ['Break Fast', 'Lunch', 'Dinner'],
-    ['Veg', 'Non-Veg', ],
-    // 
-    ['Online', 'Offline', ],
+    [
+      'Veg',
+      'Non-Veg',
+    ],
+    //
+    [
+      'Online',
+      'Offline',
+    ],
   ];
-  List<String> selectedValues = ['Cuisine1', 'Break Fast', 'Veg', 'Online', ];
-
-
+  List<String> selectedValues = [
+    'Cuisine1',
+    'Break Fast',
+    'Veg',
+    'Online',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(title: GoogleMonstserratWidgets(text: "Create Menu", fontsize: 22,),backgroundColor:const Color(0xffffd04e) ,),
+        appBar: AppBar(
+          title: GoogleMonstserratWidgets(
+            text: "Create Menu",
+            fontsize: 22,
+          ),
+          backgroundColor: primary,
+        ),
         backgroundColor: const Color.fromARGB(255, 246, 248, 247),
         body: Padding(
-          padding: const EdgeInsets.only(top: 20,left: 20,right: 20),
-          child: SingleChildScrollView(
-            child: Column(
-              
-              children: [
-                 const SizedBox(height: 20,),
+            padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+            child: SingleChildScrollView(
+              child: Column(children: [
+               Container(
+           height: 160,
+        width: 250,
+          child: image != null ? Image.file(image!,fit: BoxFit.contain,)
+          :
+         // FlutterLogo(),
+          Image.asset("assets/images/items.png")
+         
+        ),
+                sh10,
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //   children: [
+                    // ElevatedButton(
+                    //     style: ElevatedButton.styleFrom(
+                    //       backgroundColor: primary, // Background color
+                    //     ),
+                    //     onPressed: () {
+                    //       pickImagefile();
+                    //     },
+                    //     child: GoogleMonstserratWidgets(
+                    //         text: "Upload from files", fontsize: 15.w)),
+
+                            ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: primary, // Background color
+                        ),
+                        onPressed: () {
+                          pickImagecamera();
+                        },
+                        child: GoogleMonstserratWidgets(
+                            text: "Upload from camara", fontsize: 15.w)),
+                //   ],
+                // ),
+                const SizedBox(
+                  height: 20,
+                ),
                 for (int i = 0; i < dropdownItems.length; i++)
-                      
                   DropdownContainer(
                     items: dropdownItems[i],
-                    selectedValue: selectedValues[i], 
+                    selectedValue: selectedValues[i],
                     onChanged: (String? newValue) {
                       setState(() {
                         selectedValues[i] = newValue ?? '';
                       });
-                     // saveToFirebase();
+                      // saveToFirebase();
                     },
                   ),
-                  const SizedBox(height: 10),
-                 MenuTextFormFieldWidget(hintText: 'Ending Time',), const SizedBox(height: 10),
-                 MenuTextFormFieldWidget(hintText: 'Starting Time',),
-                    const SizedBox(height: 10),
-                  MenuTextFormFieldWidget(hintText: 'Prize',),
-                  
-                  
-            
-                  const SizedBox(height: 20,),
-                  ElevatedButton(
-                     style: ElevatedButton.styleFrom(
-              backgroundColor:const Color(0xffffd04e), // Background color
-            ),
-                    onPressed: (){}, child: GoogleMonstserratWidgets(text: "Create Menu", fontsize: 20))]),
-          )
-            
-          ),
-        ),
-      );
-  
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GoogleMonstserratWidgets(
+                        text: "Starting Time", fontsize: 15.w),
+                    IconButton(
+                      onPressed: () => _selectTime(context),
+                      icon: Icon(Icons.timer_sharp),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      selectedTime,
+                      style: TextStyle(
+                          fontSize: 18.w, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GoogleMonstserratWidgets(
+                        text: "Ending Time", fontsize: 15.w),
+                    IconButton(
+                      onPressed: () => _selectTime1(context),
+                      icon: Icon(Icons.timer_sharp),
+                    ),
+                    SizedBox(height: 20),
+                    Text(
+                      selectedTime1,
+                      style: TextStyle(
+                          fontSize: 18.w, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                MenuTextFormFieldWidget(
+                  hintText: 'Prize',
+                ),
+
+                 const SizedBox(height: 10),
+                MenuTextFormFieldWidget(
+                  hintText: 'About',
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: primary, // Background color
+                    ),
+                    onPressed: () {},
+                    child: GoogleMonstserratWidgets(
+                        text: "Create Menu", fontsize: 18.w)),
+              ]),
+            )),
+      ),
+    );
   }
 }
 
-class MenuTextFormFieldWidget extends StatelessWidget {
-   MenuTextFormFieldWidget({
-    required this.hintText,
-    super.key,
-  });
-String hintText;
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      decoration:  InputDecoration(
-        hintText: hintText,
-        
-        enabledBorder: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(10)),
-        )),
-        );
-  }
-}
 
-class DropdownContainer extends StatefulWidget {
-  final List<String> items;
-  final String selectedValue;
-  final ValueChanged<String?> onChanged;
 
-  const DropdownContainer({
-    Key? key,
-    required this.items,
-    required this.selectedValue,
-    required this.onChanged,
-  }) : super(key: key);
 
-  @override
-  _DropdownContainerState createState() => _DropdownContainerState();
-}
 
-class _DropdownContainerState extends State<DropdownContainer> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 50,
-          width: 400,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(width: 0.1),
-          ),
-          child: Center(
-            child: DropdownButton<String>(
-              value: widget.selectedValue,
-              onChanged: widget.onChanged,
-              items: widget.items.map((String item) {
-                return DropdownMenuItem<String>(
-                  value: item,
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(item)),
-                );
-              }).toList(),
-            ),
-          ),
-   
-        ),
-        const SizedBox(height: 10,)
-     ],
-);
-}
-}
+

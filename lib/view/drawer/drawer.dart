@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lepton_sapor/Admin%20login/admin_login.dart';
 import 'package:lepton_sapor/signin/pages/google_signing_provider.dart';
 import 'package:lepton_sapor/view/Admin/admin_homepage.dart';
 import 'package:lepton_sapor/view/colors/colors.dart';
@@ -122,7 +123,7 @@ class SideDrawer extends StatelessWidget {
             onTap: () {
              Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AdminHomePage()),
+                      MaterialPageRoute(builder: (context) =>AdminLoginPage()),
                     );
             },
           ),

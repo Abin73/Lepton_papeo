@@ -1,14 +1,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lepton_sapor/demo.dart';
 import 'package:lepton_sapor/view/constant/constant.dart';
 import 'package:lepton_sapor/view/drawer/drawer.dart';
 import 'package:lepton_sapor/view/homepage/widgets/carosel_slider.dart/carosel_slider.dart';
 import 'package:lepton_sapor/view/colors/colors.dart';
 import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
 import 'package:lepton_sapor/view/menu%20items%20page/menu_list.dart';
+import 'package:lepton_sapor/view/open%20image%20picker/image_picker.dart';
 import 'package:lepton_sapor/view/widget/bottomnavbar/bottom_nav_bar.dart';
 import 'package:lepton_sapor/view/widget/search_bar.dart';
+import 'package:text_scroll/text_scroll.dart';
 
 import '../bottomnavbar/bottom_nav_bar.dart';
 
@@ -66,7 +70,7 @@ class _HalfHomePageState extends State<HalfHomePage>
                 margin: EdgeInsets.only(right: 10.w),
                 child: IconButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => DemoCollection(),));
+                //    Navigator.push(context, MaterialPageRoute(builder: (context) => ImagePickerName(),));
                     },
                     icon:  Icon(
                       Icons.shopping_cart,
@@ -105,6 +109,29 @@ class _HalfHomePageState extends State<HalfHomePage>
                 
                  sh20,
                 // sh20,
+
+                Container(
+                  height: 80,
+                  width: 300,
+                  
+                  child:   Center(
+                    child: 
+                    TextScroll(
+                      'ഓണസദ്യ ബുക്കിംഗിനായി, Please click here !',
+                      intervalSpaces: 10,
+                      velocity: Velocity(pixelsPerSecond: Offset(50, 0)),
+                      style:  GoogleFonts.montserrat(
+                                    color: cwhite,
+                                    // Colors.white.withOpacity(0.5),
+                                    fontSize: 15.w,
+                                    fontWeight: FontWeight.w600),
+
+                    ),
+                   
+                  
+                                
+                  ),
+                ),
                 
 
                  Container(
@@ -164,40 +191,15 @@ class _HalfHomePageState extends State<HalfHomePage>
                    child: TabBarView(
                      controller: _tabController,
                      children: [ 
+
                       MenuListItems(),
+
                       MenuListItems(),
+
                       MenuListItems(),
+
                       MenuListItems(),
-                      //FoodMenu(),
-                      //  ListViewBuilderWidget(
-                      //   image: 'assets/images/sapor_bg.png',
-                      //  text: 'Item ',
-                      //  description: "description",
-                      //  ),
-                       
-                    
-                    //  ListViewBuilderWidget(
-                    //     image: 'assets/images/fish.jpg',
-                    //    text: 'Item ',
-                    //    description: "description",
-                    //    ),
-
-
-                    //     ListViewBuilderWidget(
-                    //     image: 'assets/images/curry.png',
-                    //    text: 'Item ',
-                    //    description: "description",
-                    //    ),
-
-
-                    //     ListViewBuilderWidget(
-                    //     image: 'assets/images/food.jpg',
-                    //    text: 'Item ',
-                    //    description: "description",
-                    //    ),
-
-
-
+                     
                      ],
                    ),
                  ),

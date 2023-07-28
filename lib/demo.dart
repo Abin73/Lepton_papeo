@@ -1,13 +1,190 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:lepton_sapor/utils/utils.dart';
+
+/// Flutter code sample for [showTimePicker].
+
+// class ShowTimePickerApp extends StatefulWidget {
+//   const ShowTimePickerApp({super.key});
+
+//   @override
+//   State<ShowTimePickerApp> createState() => _ShowTimePickerAppState();
+// }
+
+// class _ShowTimePickerAppState extends State<ShowTimePickerApp> {
+//   ThemeMode themeMode = ThemeMode.dark;
+//   bool useMaterial3 = true;
+
+//   void setThemeMode(ThemeMode mode) {
+//     setState(() {
+//       themeMode = mode;
+//     });
+//   }
+
+//   void setUseMaterial3(bool? value) {
+//     setState(() {
+//       useMaterial3 = value!;
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData.light(useMaterial3: useMaterial3),
+//       darkTheme: ThemeData.dark(useMaterial3: useMaterial3),
+//       themeMode: themeMode,
+//       home: TimePickerOptions(
+//         themeMode: themeMode,
+//         useMaterial3: useMaterial3,
+//         setThemeMode: setThemeMode,
+//         setUseMaterial3: setUseMaterial3,
+//       ),
+//     );
+//   }
+// }
 
 
 
-       
-        
-        
-     
 
 
 
+
+
+
+
+// Your timePicker function and helper functions (unchanged)...
+
+// Future<String> timePicker(BuildContext context) async {
+//   final TimeOfDay? time =
+//       await showTimePicker(context: context, initialTime: TimeOfDay.now());
+//   if (time != null) {
+//     // Get the current time of day using Dart's DateTime class
+
+//     // Convert the TimeOfDay object to a custom 12-hour format with AM/PM
+//     String formattedTime =
+//         '${_getFormattedHour(time)}:${time.minute.toString().padLeft(2, '0')} ${_getAmPm(time)}';
+
+//     return formattedTime;
+//   } else {
+//     return "";
+//   }
+// }
+
+// String _getAmPm(TimeOfDay timeOfDay) {
+//   return timeOfDay.period == DayPeriod.am ? 'AM' : 'PM';
+// }
+
+// String _getFormattedHour(TimeOfDay timeOfDay) {
+//   String hour =
+//       (timeOfDay.hourOfPeriod == 0 ? 12 : timeOfDay.hourOfPeriod).toString();
+//   return hour;
+// }
+
+
+
+
+// import 'package:flutter/material.dart';
+// import 'package:text_scroll/text_scroll.dart';
+
+// class TextScrollEx extends StatefulWidget {
+//   const TextScrollEx({Key? key, required this.title}) : super(key: key);
+//   final String title;
+
+//   @override
+//   State<TextScrollEx> createState() => _TextScrollExState();
+// }
+
+// class _TextScrollExState extends State<TextScrollEx> {
+//   bool _clicked = false;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(widget.title),
+//       ),
+//       body: Center(
+//         child: ConstrainedBox(
+//           constraints: const BoxConstraints(maxWidth: 400),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               Row(
+//                 children: const [
+//                   Flexible(
+//                     child: TextScroll(
+//                       'This is the sample text for Flutter TextScroll widget.',
+//                       intervalSpaces: 10,
+//                       velocity: Velocity(pixelsPerSecond: Offset(50, 0)),
+//                     ),
+//                   ),
+//                   SizedBox(width: 4),
+//                   Expanded(
+//                     child: SizedBox(),
+//                   ),
+//                 ],
+//               ),
+//               const SizedBox(height: 20),
+//               Row(
+//                 children: const [
+//                   Expanded(flex: 2, child: Text('Static text')),
+//                   Flexible(
+//                     flex: 1,
+//                     child: TextScroll(
+//                       'This is the sample text for Flutter TextScroll widget. ',
+//                       velocity: Velocity(pixelsPerSecond: Offset(50, 0)),
+//                       pauseBetween: Duration(milliseconds: 1000),
+//                       mode: TextScrollMode.bouncing,
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//               const SizedBox(height: 20),
+//               const TextScroll(
+//                 'This is the sample text for Flutter TextScroll widget. '
+//                 'This is the sample text for Flutter TextScroll widget.',
+//                 mode: TextScrollMode.bouncing,
+//                 numberOfReps: 200,
+//                 delayBefore: Duration(milliseconds: 2000),
+//                 pauseBetween: Duration(milliseconds: 1000),
+//                 velocity: Velocity(pixelsPerSecond: Offset(100, 0)),
+//                 style: TextStyle(decoration: TextDecoration.underline),
+//                 textAlign: TextAlign.right,
+//                 selectable: true,
+//               ),
+//               const SizedBox(height: 20),
+//               const TextScroll(
+//                 'Hey! I\'m a RTL text, check me out. Hey! I\'m a RTL text, check me out. Hey! I\'m a RTL text, check me out. ',
+//                 textDirection: TextDirection.rtl,
+//               ),
+//               const SizedBox(height: 20),
+//               const TextScroll(
+//                 'This is the sample text for Flutter TextScroll widget with faded border.',
+//                 intervalSpaces: 10,
+//                 velocity: Velocity(pixelsPerSecond: Offset(50, 0)),
+//                 fadedBorder: true,
+//                 fadeBorderVisibility: FadeBorderVisibility.auto,
+//                 fadeBorderSide: FadeBorderSide.both,
+//               ),
+//               const SizedBox(height: 20),
+//               GestureDetector(
+//                 onTap: () {
+//                   setState(() => _clicked = true);
+//                 },
+//                 child: TextScroll(
+//                   'Click me to start scrolling. Click me to start scrolling. Click me to start scrolling. Click me to start scrolling. ',
+//                   velocity: Velocity(
+//                     pixelsPerSecond: Offset(_clicked ? 150 : 0, 0),
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 
 

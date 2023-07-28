@@ -78,21 +78,33 @@ class _CaroselState extends State<Carosel> {
                               style: TextStyle(fontSize: 20, color: Colors.white),
                             ),
                             sh20,
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => FoodMenu(),));
-                              },
-                              child: Container(
-                               // margin: EdgeInsets.only(left: 100),
-                                height: 35.h,
-                                width: 100.w,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(Radius.circular(65)),
-                                  color: Colors.blue,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  height: 150.h,
+                                  width: 260.w,
+                                  //color: cred,
                                 ),
-                                child: Center(child: 
-                                GoogleMonstserratWidgets(text: "Menu", fontsize: 18,color: cwhite,)),
-                              ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => FoodMenu1(),));
+                                  },
+                                  child: Container(
+                                   // margin: EdgeInsets.only(left: 100),
+                                    height: 45.h,
+                                    width: 100.w,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: cwhite),
+                                     borderRadius: BorderRadius.all(Radius.circular(65)),
+                                     color: Colors.blue,
+                                    gradient: llGradient
+                                    ),
+                                    child: Center(child: 
+                                    GoogleMonstserratWidgets(text: "Menu", fontsize: 15.w,color: cwhite,)),
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
