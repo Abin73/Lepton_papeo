@@ -1,6 +1,6 @@
 import 'dart:io';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
+ 
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,9 +21,8 @@ class CreateMenu extends StatefulWidget {
 
 class _CreateMenuState extends State<CreateMenu> {
   File? image;
-
+ 
 //     Future pickImagefile() async{
-
 //     try{  
 //    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
 //    if(image == null) return ;
@@ -48,8 +47,15 @@ class _CreateMenuState extends State<CreateMenu> {
 }
 
 
+Future uploadFile()async{
+  final path = 'files/';
+  final file =File(image!.path);
+
+  final ref = FirebaseStorage.instance.ref().child(path);
+  ref .putFile(file);
 
 
+}
 
 
   String selectedTime = "";
@@ -105,8 +111,8 @@ class _CreateMenuState extends State<CreateMenu> {
             child: SingleChildScrollView(
               child: Column(children: [
                Container(
-           height: 160,
-        width: 250,
+           height: 150,
+        width: 300,
           child: image != null ? Image.file(image!,fit: BoxFit.contain,)
           :
          // FlutterLogo(),
@@ -117,15 +123,7 @@ class _CreateMenuState extends State<CreateMenu> {
                 // Row(
                 //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 //   children: [
-                    // ElevatedButton(
-                    //     style: ElevatedButton.styleFrom(
-                    //       backgroundColor: primary, // Background color
-                    //     ),
-                    //     onPressed: () {
-                    //       pickImagefile();
-                    //     },
-                    //     child: GoogleMonstserratWidgets(
-                    //         text: "Upload from files", fontsize: 15.w)),
+                  
 
                             ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -135,7 +133,20 @@ class _CreateMenuState extends State<CreateMenu> {
                           pickImagecamera();
                         },
                         child: GoogleMonstserratWidgets(
-                            text: "Upload from camara", fontsize: 15.w)),
+                            text: "Open camara", fontsize: 15.w)),
+
+                              ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: primary, // Background color
+                        ),
+                        onPressed: () {
+                          uploadFile();
+                        },
+                        child: GoogleMonstserratWidgets(
+                            text: "Upload to server", fontsize: 15.w)),
+                            sh10,
+
+                          
                 //   ],
                 // ),
                 const SizedBox(
@@ -212,9 +223,4 @@ class _CreateMenuState extends State<CreateMenu> {
     );
   }
 }
-
-
-
-
-
 

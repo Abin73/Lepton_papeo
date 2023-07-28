@@ -46,10 +46,13 @@ dependencies:
   font_awesome_flutter: 
   provider: 
   firebase_auth: 
+  firebase_storage: 
   cloud_firestore: 
   text_scroll: ^0.2.0
   toggle_switch: ^2.1.0
   image_picker: ^1.0.1
+  file_picker: ^5.0.0
+  
 
 
 flutter_icons:
