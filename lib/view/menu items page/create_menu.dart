@@ -184,8 +184,8 @@ Future uploadFile()async{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    GoogleMonstserratWidgets(
-                        text: "Ending Time", fontsize: 15.w),
+                            GoogleMonstserratWidgets(
+                                text: "Ending Time", fontsize: 15.w),
                     IconButton(
                       onPressed: () => _selectTime1(context),
                       icon: Icon(Icons.timer_sharp),
