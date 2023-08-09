@@ -117,6 +117,14 @@ class SideDrawer extends StatelessWidget {
               
             },
           ),
+
+            ListTile(
+            leading: Icon(Icons.person_outline,color: primary,size: 25.w),
+            title: GoogleMonstserratWidgets(text: 'User profile',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
+            onTap: () {
+              
+            },
+          ),
             ListTile(
             leading: Icon(Icons.admin_panel_settings_outlined,color: primary,size: 25.w),
             title: GoogleMonstserratWidgets(text: 'Admin Login',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),

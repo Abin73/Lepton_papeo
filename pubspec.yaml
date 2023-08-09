@@ -52,6 +52,7 @@ dependencies:
   toggle_switch: ^2.1.0
   image_picker: ^1.0.1
   file_picker: ^5.0.0
+  uuid:
   
 
 

@@ -1,10 +1,13 @@
 import 'dart:io';
+import 'dart:math';
  
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:lepton_sapor/model/create_menu_model.dart';
 import 'package:lepton_sapor/utils/utils.dart';
 import 'package:lepton_sapor/view/colors/colors.dart';
 import 'package:lepton_sapor/view/constant/constant.dart';
@@ -13,7 +16,10 @@ import 'package:lepton_sapor/view/menu%20items%20page/widget/menu_dropdown.dart'
 import 'package:lepton_sapor/view/menu%20items%20page/widget/menu_textformwidget.dart';
 
 class CreateMenu extends StatefulWidget {
-  const CreateMenu({Key? key}) : super(key: key);
+   CreateMenu({Key? key}) : super(key: key);
+  final foodprizecontroller = TextEditingController();
+  final aboutfoodcontroller = TextEditingController();
+  final foodnamecontroller = TextEditingController();
 
   @override
   State<CreateMenu> createState() => _CreateMenuState();
@@ -21,7 +27,13 @@ class CreateMenu extends StatefulWidget {
 
 class _CreateMenuState extends State<CreateMenu> {
   File? image;
- 
+  int _randomNumber = 0;
+ void _generateRandomNumber() {
+    setState(() {
+      _randomNumber = Random().nextInt(10000); // Generate random number from 0 to 99
+      });
+}
+
 //     Future pickImagefile() async{
 //     try{  
 //    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
@@ -198,13 +210,20 @@ Future uploadFile()async{
                     ),
                   ],
                 ),
+                 const SizedBox(height: 10),
+                MenuTextFormFieldWidget(
+                  controller: widget.foodnamecontroller,
+                  hintText: 'Food name',
+                ),
                 const SizedBox(height: 10),
                 MenuTextFormFieldWidget(
+                  controller: widget.foodprizecontroller,
                   hintText: 'Prize',
                 ),
 
                  const SizedBox(height: 10),
                 MenuTextFormFieldWidget(
+                  controller: widget.aboutfoodcontroller,
                   hintText: 'About',
                 ),
                 const SizedBox(
@@ -214,7 +233,23 @@ Future uploadFile()async{
                     style: ElevatedButton.styleFrom(
                       backgroundColor: primary, // Background color
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      final CreateFoodMenu foodDetails = CreateFoodMenu(
+                           foodId: '${widget.foodnamecontroller.text.trim()}$_randomNumber',
+                          docid: "",
+                          foodName: widget.foodnamecontroller.text.trim(),
+                          cusine: selectedValues[0],
+                          timeBasedFood: selectedValues[1],
+                          vegNonVeg: selectedValues[2],
+                          availability: selectedValues[3],
+                          startingTime: selectedTime,
+                          endingtime: selectedTime1,
+                          prize: widget.foodprizecontroller.text.trim(),
+                          about: widget.aboutfoodcontroller.text.trim(),
+                        );
+                        addingFoodmenu(foodDetails);
+                        _generateRandomNumber();
+                    },
                     child: GoogleMonstserratWidgets(
                         text: "Create Menu", fontsize: 18.w)),
               ]),
@@ -222,5 +257,18 @@ Future uploadFile()async{
       ),
     );
   }
+}
+
+addingFoodmenu(CreateFoodMenu menuDetails) {
+  final id = uuid.v1();
+  const String foodMenuId = 'Create_Menu';
+  const String addMenuId = 'Add_Menu';
+
+  FirebaseFirestore.instance
+      .collection('Menu')
+      .doc(id)
+      // .collection('CreateMenu')
+      // .doc(id)
+      .set(menuDetails.copyWith(docid: id).toMap());
 }
 
