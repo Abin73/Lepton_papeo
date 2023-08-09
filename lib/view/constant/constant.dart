@@ -33,3 +33,27 @@ String? checkFieldEmailIsValid(String? fieldContent) {
     return "Email is not valid";
   }
 }
+
+
+
+String? checkFieldPhoneNumberIsValid(String? fieldContent) {
+  if (fieldContent == null) {
+    return 'null';
+  }
+  if (fieldContent.length >= 10) {
+    return null;
+  } else {
+    return 'Please enter 10 digit number';
+  }
+}
+
+String? checkFieldPasswordIsValid(String? fieldContent) {
+  if (fieldContent == null) {
+    return 'null';
+  }
+  if (fieldContent.length >= 6) {
+    return null;
+  } else {
+    return 'Minimum 6 Charaters is required';
+  }
+}

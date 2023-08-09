@@ -1,18 +1,16 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lepton_sapor/Admin%20login/admin_login.dart';
 import 'package:lepton_sapor/signin/pages/google_signing_provider.dart';
-import 'package:lepton_sapor/view/Admin/admin_homepage.dart';
+import 'package:lepton_sapor/view/User_Profile/user_profile.dart';
 import 'package:lepton_sapor/view/colors/colors.dart';
 import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
 import 'package:provider/provider.dart';
 
 
 class SideDrawer extends StatelessWidget {
-  SideDrawer({Key? key}) : super(key: key);
+  const SideDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +120,10 @@ class SideDrawer extends StatelessWidget {
             leading: Icon(Icons.person_outline,color: primary,size: 25.w),
             title: GoogleMonstserratWidgets(text: 'User profile',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
             onTap: () {
-              
+               Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>UserProfilePage()),
+                    );
             },
           ),
             ListTile(
@@ -171,7 +172,7 @@ class SideDrawer extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children:  [
-                    CircleAvatar(
+                    const CircleAvatar(
                       backgroundColor: Colors.transparent,
                       backgroundImage: NetworkImage(
                           'https://firebasestorage.googleapis.com/v0/b/leptonscipro-31792.appspot.com/o/files%2Fimages%2FL.png?alt=media&token=135e14d0-fb5a-4a21-83a6-411f647ec974'),

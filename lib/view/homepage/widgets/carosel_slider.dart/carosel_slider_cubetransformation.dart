@@ -140,7 +140,7 @@
 //         return Column(
 //           mainAxisSize: MainAxisSize.min,
 //           children: <Widget>[
-//             Text("This is the search page"),
+//             Text("This is the page"),
 //             ElevatedButton(
 //               child: Text(
 //                 "Start new page",

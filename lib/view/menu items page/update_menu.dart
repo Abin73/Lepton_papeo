@@ -198,11 +198,8 @@ class _UpdateMenuState extends State<UpdateMenu> {
                                       activeFgColor: Colors.white,
                                       inactiveBgColor: Colors.grey,
                                       inactiveFgColor: Colors.white,
-                                      initialLabelIndex:
-                                          documentData['availability'] ==
-                                                  'online'
-                                              ? 0
-                                              : 1,
+                                     initialLabelIndex: documentData['availability'] == 'online' ? 0 : 1,
+
                                       totalSwitches: 2,
                                       labels: const ['ON', 'OFF'],
                                       radiusStyle: true,
@@ -301,7 +298,7 @@ void _showEnlargedImageDialog(BuildContext context, String imagePath) {
         ),
        actions: <Widget>[
             TextButton(
-              child:  Text('Cancel'),
+              child:  const Text('Cancel'),
               onPressed: () {
                 Navigator.of(context).pop();
               },

@@ -10,32 +10,35 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var ScreenSize  = MediaQuery.of(context).size;
-    return Container(
-     // margin: EdgeInsets.only(top: 10.h),
-     width: ScreenSize.width/1.6,
-     height: 45.h,
-       decoration: BoxDecoration(
-        // color: Color.fromARGB(255, 25, 42, 68),
-         borderRadius: BorderRadius.circular(10.0),
-         border: Border.all(color: cwhite,width: 1),
-
-       ),
-       child:  TextFormField(
-        
-         //controller: ,
-         decoration:  InputDecoration(
-          fillColor: cwhite,
-         
-           hintText: 'Search food',hintStyle: TextStyle(color: cwhite,
-       
-           fontSize: 15.w
-           ),
-           border: InputBorder.none,
-           prefixIcon: Icon(Icons.search,color: cwhite,size: 25.w,),
-          // contentPadding: EdgeInsets.all(16.0),
+    return Padding(
+      padding:  EdgeInsets.only(top: 5.h),
+      child: Container(
+       // margin: EdgeInsets.only(top: 10.h),
+       width: ScreenSize.width/1.6,
+       height: 45.h,
+         decoration: BoxDecoration(
+          // color: Color.fromARGB(255, 25, 42, 68),
+           borderRadius: BorderRadius.circular(10.0),
+           border: Border.all(color: cwhite,width: 1),
+    
          ),
-         style: TextStyle(color: cwhite),
+         child:  TextFormField(
+          
+           //controller: ,
+           decoration:  InputDecoration(
+            fillColor: cwhite,
+           
+             hintText: 'Search food',hintStyle: TextStyle(color: cwhite,
+         
+             fontSize: 15.w
+             ),
+             border: InputBorder.none,
+             prefixIcon: Icon(Icons.search,color: cwhite,size: 25.w,),
+            // contentPadding: EdgeInsets.all(16.0),
+           ),
+           style: const TextStyle(color: cwhite),
+         ),
        ),
-     );
+    );
   }
 }

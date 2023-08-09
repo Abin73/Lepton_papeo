@@ -2,19 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lepton_sapor/demo.dart';
+import 'package:lepton_sapor/view/colors/colors.dart';
 import 'package:lepton_sapor/view/constant/constant.dart';
 import 'package:lepton_sapor/view/drawer/drawer.dart';
-import 'package:lepton_sapor/view/homepage/widgets/carosel_slider.dart/carosel_slider.dart';
-import 'package:lepton_sapor/view/colors/colors.dart';
 import 'package:lepton_sapor/view/fonts/googleMonstre.dart';
+import 'package:lepton_sapor/view/homepage/widgets/carosel_slider.dart/carosel_slider.dart';
 import 'package:lepton_sapor/view/menu%20items%20page/menu_list.dart';
-import 'package:lepton_sapor/view/open%20image%20picker/image_picker.dart';
-import 'package:lepton_sapor/view/widget/bottomnavbar/bottom_nav_bar.dart';
 import 'package:lepton_sapor/view/widget/search_bar.dart';
 import 'package:text_scroll/text_scroll.dart';
-
-import '../bottomnavbar/bottom_nav_bar.dart';
 
 
 class HalfHomePage extends StatefulWidget {
@@ -46,28 +41,35 @@ class _HalfHomePageState extends State<HalfHomePage>
     return SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(72.h),
+          preferredSize: Size.fromHeight(76.h),
           child: AppBar(
-            backgroundColor: Color.fromARGB(255, 25, 42, 68), elevation: 0,
+            backgroundColor: const Color.fromARGB(255, 25, 42, 68), elevation: 0,
             //cred,
             // Colors.transparent,elevation: 0,
 
              leading: Builder(
           builder: (BuildContext context) {
-            return IconButton(
-              icon: Icon(Icons.menu,
-              color: cwhite,
-              size: 32.w,),
-              onPressed: () {
-                Scaffold.of(context).openDrawer(); // This is to open the side drawer when the icon is pressed.
-              },
+            return Padding(
+              padding:  EdgeInsets.only(top: 10.h,right: 10.w),
+              child: IconButton(
+                
+                icon: Icon(Icons.menu,
+                color: cwhite,
+                size: 32.w,),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer(); // This is to open the side drawer when the icon is pressed.
+                },
+              ),
             );
           },
         ),
-            title: SearchBarWidget(),
+            title: const Padding(
+              padding: EdgeInsets.only(top: 5,left: 15),
+              child: SearchBarWidget(),
+            ),
             actions: [
               Container(
-                margin: EdgeInsets.only(right: 10.w),
+                margin: EdgeInsets.only(right: 10.w,top: 10.h),
                 child: IconButton(
                     onPressed: () {
                 //    Navigator.push(context, MaterialPageRoute(builder: (context) => ImagePickerName(),));
@@ -81,7 +83,7 @@ class _HalfHomePageState extends State<HalfHomePage>
             ],
           ),
         ),
-        backgroundColor: Color.fromARGB(255, 91, 114,163),
+        backgroundColor: const Color.fromARGB(255, 91, 114,163),
 
        drawer: Drawer(
 
@@ -97,7 +99,7 @@ class _HalfHomePageState extends State<HalfHomePage>
                 sh20,
 
 
-                Container(
+                SizedBox(
                   // decoration: BoxDecoration(
                   //   color: Color.fromARGB(255, 91, 114,163),
                   //   ),
@@ -110,7 +112,7 @@ class _HalfHomePageState extends State<HalfHomePage>
                  sh20,
                 // sh20,
 
-                Container(
+                SizedBox(
                   height: 80,
                   width: 300,
                   
@@ -119,7 +121,7 @@ class _HalfHomePageState extends State<HalfHomePage>
                     TextScroll(
                       'ഓണസദ്യ ബുക്കിംഗിനായി, Please click here !',
                       intervalSpaces: 10,
-                      velocity: Velocity(pixelsPerSecond: Offset(50, 0)),
+                      velocity: const Velocity(pixelsPerSecond: Offset(50, 0)),
                       style:  GoogleFonts.montserrat(
                                     color: cwhite,
                                     // Colors.white.withOpacity(0.5),
@@ -144,7 +146,7 @@ class _HalfHomePageState extends State<HalfHomePage>
                      tabs: [
                        Container(
                         height: 100.h,
-                         decoration: BoxDecoration(
+                         decoration: const BoxDecoration(
                                          gradient: llGradient,
                                            shape: BoxShape.circle,
                                        //  borderRadius: BorderRadius.all(Radius.circular(50.w))
@@ -157,7 +159,7 @@ class _HalfHomePageState extends State<HalfHomePage>
 
                        Container(
                         height: 100.h,
-                         decoration: BoxDecoration(
+                         decoration: const BoxDecoration(
                                          gradient: llGradient,
                                            shape: BoxShape.circle,
                                        //  borderRadius: BorderRadius.all(Radius.circular(50.w))
@@ -167,7 +169,7 @@ class _HalfHomePageState extends State<HalfHomePage>
 
                        Container(
                         height: 100.h,
-                         decoration: BoxDecoration(
+                         decoration: const BoxDecoration(
                                          gradient: llGradient,
                                            shape: BoxShape.circle,
                                        //  borderRadius: BorderRadius.all(Radius.circular(50.w))
@@ -176,7 +178,7 @@ class _HalfHomePageState extends State<HalfHomePage>
                         child: Tab(child:Center(child: GoogleMonstserratWidgets(text: 'Dinner', fontsize: 13.w,color: cwhite,)),)),
                        Container(
                         height: 100.h,
-                         decoration: BoxDecoration(
+                         decoration: const BoxDecoration(
                                          gradient: llGradient,
                                            shape: BoxShape.circle,
                                        //  borderRadius: BorderRadius.all(Radius.circular(50.w))
@@ -207,7 +209,7 @@ class _HalfHomePageState extends State<HalfHomePage>
             ),
           ),
         ),
-        bottomNavigationBar:  BottomNavBar(),
+        bottomNavigationBar:  const BottomNavBar(),
       ),
     );
   }
@@ -270,7 +272,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     
       currentIndex: _currentIndex,
       onTap: _onTabTapped,
-      backgroundColor: Color.fromARGB(255, 25, 42, 68),
+      backgroundColor: const Color.fromARGB(255, 25, 42, 68),
       //Color(0XFFffd04e), // Set the background color here
       selectedItemColor: Colors.blue, // Set the selected item color here
       unselectedItemColor: cwhite,
@@ -325,7 +327,7 @@ class ScrollingCateogryWidget extends StatelessWidget {
             ],
           ),
           color: color,
-          borderRadius: BorderRadius.all(Radius.circular(15))),
+          borderRadius: const BorderRadius.all(Radius.circular(15))),
       width: width,
 
       child: Center(
