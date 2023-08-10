@@ -27,7 +27,7 @@ class SideDrawer extends StatelessWidget {
         
           Container(
             margin: const EdgeInsets.only(bottom: 0),
-            height: 90.h,
+            height: 80.h,
             width: 150.w,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
@@ -73,7 +73,7 @@ class SideDrawer extends StatelessWidget {
           ),
          Container(
           margin: EdgeInsets.only(top: 40.w),
-          height: 430.h,
+          height: 420.h,
           color: Colors.white70,
           child: ListView(
         padding: EdgeInsets.zero,
@@ -87,6 +87,34 @@ class SideDrawer extends StatelessWidget {
             },
           ),
           
+            ListTile(
+            leading: Icon(Icons.person_outline,color: primary,size: 25.w),
+            title: GoogleMonstserratWidgets(text: 'User profile',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
+            onTap: () {
+               Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>const UserProfilePage()),
+                    );
+            },
+          ),
+            ListTile(
+            leading: Icon(Icons.admin_panel_settings_outlined,color: primary,size: 25.w),
+            title: GoogleMonstserratWidgets(text: 'Admin Login',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
+            onTap: () {
+             Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>AdminLoginPage()),
+                    );
+            },
+          ),
+                     ListTile(
+            leading: Icon(Icons.menu_book,color: primary,size: 25.w),
+            title: GoogleMonstserratWidgets(text: 'Menu',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
+            onTap: () {
+            
+            },
+          ),
+          
                     ListTile(
             leading: Icon(Icons.food_bank,color: primary,size: 25.w),
             title: GoogleMonstserratWidgets(text: 'Specials',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
@@ -94,13 +122,7 @@ class SideDrawer extends StatelessWidget {
             
             },
           ),
-                    ListTile(
-            leading: Icon(Icons.menu_book,color: primary,size: 25.w),
-            title: GoogleMonstserratWidgets(text: 'Menu',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
-            onTap: () {
-            
-            },
-          ),
+         
                     ListTile(
             leading: Icon(Icons.delivery_dining,color: primary,size: 25.w),
             title: GoogleMonstserratWidgets(text: 'Orders',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
@@ -116,26 +138,6 @@ class SideDrawer extends StatelessWidget {
             },
           ),
 
-            ListTile(
-            leading: Icon(Icons.person_outline,color: primary,size: 25.w),
-            title: GoogleMonstserratWidgets(text: 'User profile',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
-            onTap: () {
-               Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>UserProfilePage()),
-                    );
-            },
-          ),
-            ListTile(
-            leading: Icon(Icons.admin_panel_settings_outlined,color: primary,size: 25.w),
-            title: GoogleMonstserratWidgets(text: 'Admin Login',fontsize: 15.w,fontWeight:FontWeight.w600,color: primary),
-            onTap: () {
-             Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) =>AdminLoginPage()),
-                    );
-            },
-          ),
         
         ],
       ),

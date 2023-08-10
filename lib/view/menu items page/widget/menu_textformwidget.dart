@@ -5,10 +5,12 @@ class MenuTextFormFieldWidget extends StatelessWidget {
   MenuTextFormFieldWidget({
     required this.hintText,
     this.controller,
+    this.validator,
     super.key,
   });
   String hintText;
   TextEditingController? controller;
+   String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return Padding(

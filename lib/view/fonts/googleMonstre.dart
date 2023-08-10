@@ -9,6 +9,7 @@ class GoogleMonstserratWidgets extends StatelessWidget {
   double? letterSpacing;
   Color? color;
   TextOverflow?overflow;
+  
   GoogleMonstserratWidgets({
     required this.text,
     required this.fontsize,
@@ -16,6 +17,7 @@ class GoogleMonstserratWidgets extends StatelessWidget {
     this.color,
     this.letterSpacing,
     this.overflow,
+    
     super.key,
   });
 
@@ -23,8 +25,9 @@ class GoogleMonstserratWidgets extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       
+      
       text,
-      overflow: overflow, maxLines: 1,
+      overflow: overflow,
       style: GoogleFonts.montserrat(
         letterSpacing: letterSpacing,
         fontSize: fontsize,

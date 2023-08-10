@@ -5,12 +5,14 @@ class DropdownContainer extends StatefulWidget {
   final List<String> items;
   final String selectedValue;
   final ValueChanged<String?> onChanged;
+  String? Function(String?)? validator;
 
-  const DropdownContainer({
+   DropdownContainer({
     Key? key,
     required this.items,
     required this.selectedValue,
     required this.onChanged,
+     this.validator,
   }) : super(key: key);
 
   @override
